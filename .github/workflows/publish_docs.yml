@@ -1,4 +1,4 @@
-name: Actividad02 - Documentacion DocFx y Publicar
+name: Actividad - 2 | Generar Documentacion con DocFx y Publicar 
 env:
   DOTNET_VERSION: '8.0' # la versión de .NET
   DOTNET_VERSION_TOOL: '6.0' # la versión de .NET para agregar compatibilidad con .NET 6
@@ -69,7 +69,7 @@ jobs:
                 ],
                 "exclude": [
                   "_site/**",
-                  "Cobertura/index.html"
+                  "ReporteBDD/index.html"
                 ]
               }
             ],
@@ -77,6 +77,11 @@ jobs:
               {
                 "files": [
                   "images/**"
+                ]
+              },
+              {
+                "files": [
+                  "Cobertura/**"
                 ]
               }
             ],
@@ -116,6 +121,10 @@ jobs:
         ## [Diagrama de Clases](clases.md)
 
         ## [Pruebas Markdown](Cobertura/SummaryGithub.md)
+
+        ## [Documentacion Clases, atributos y métodos](docs/Bank.Domain.html)
+
+        ## [Reporte BDD](ReporteBDD/index.html)
         EOF
     - name: Generar documentación
       run: |
