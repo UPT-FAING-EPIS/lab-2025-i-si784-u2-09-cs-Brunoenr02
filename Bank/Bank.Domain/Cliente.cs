@@ -1,4 +1,4 @@
-namespace Bank.DomainAdd commentMore actions
+namespace Bank.Domain
 {
     /// <summary>
     /// Representa un cliente del banco.
