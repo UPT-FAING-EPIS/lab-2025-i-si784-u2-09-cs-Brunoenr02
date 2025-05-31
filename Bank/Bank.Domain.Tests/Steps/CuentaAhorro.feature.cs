@@ -21,8 +21,8 @@ namespace Bank.Domain.Tests.Steps
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Como cliente quiero realizar depositos y retiros para modificar mi saldo de cuent" +
-        "a")]
-    public partial class ComoClienteQuieroRealizarDepositosYRetirosParaModificarMiSaldoDeCuentaFeature
+        "aAdd commentMore actions")]
+    public partial class ComoClienteQuieroRealizarDepositosYRetirosParaModificarMiSaldoDeCuentaAddCommentMoreActionsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -37,7 +37,7 @@ namespace Bank.Domain.Tests.Steps
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Steps", "Como cliente quiero realizar depositos y retiros para modificar mi saldo de cuent" +
-                    "a", null, ProgrammingLanguage.CSharp, featureTags);
+                    "aAdd commentMore actions", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -172,12 +172,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cliente cancela su cuenta exitosamente")]
-        public void ClienteCancelaSuCuentaExitosamente()
+        [NUnit.Framework.DescriptionAttribute("Cliente cancela su cuenta con saldo cero y es correcto")]
+        public void ClienteCancelaSuCuentaConSaldoCeroYEsCorrecto()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cliente cancela su cuenta exitosamente", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cliente cancela su cuenta con saldo cero y es correcto", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -202,12 +202,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cliente intenta cancelar una cuenta ya cancelada")]
-        public void ClienteIntentaCancelarUnaCuentaYaCancelada()
+        [NUnit.Framework.DescriptionAttribute("Cliente cancela su cuenta con saldo y es incorrecto")]
+        public void ClienteCancelaSuCuentaConSaldoYEsIncorrecto()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cliente intenta cancelar una cuenta ya cancelada", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cliente cancela su cuenta con saldo y es incorrecto", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -222,13 +222,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("la nueva cuenta numero 12345", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 27
- testRunner.When("cancelo la cuenta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("con saldo 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
- testRunner.And("cancelo la cuenta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("cancelo la cuenta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 29
- testRunner.Then("la cuenta deberia estar cancelada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("deberia ser error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 30
+ testRunner.And("deberia mostrarse el error: No se puede cancelar una cuenta con saldo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -66,18 +66,26 @@ namespace Bank.Domain.Tests.Features
                 _error = ex.Message;
             }
         }
-
+        
         [When("cancelo la cuenta")]
         public void CuandoCanceloLaCuenta()
         {
-            _cuenta.Cancelar();
+            try
+            {
+                _cuenta.Cancelar();
+            }
+            catch (System.Exception ex)
+            {
+                _es_error = true; 
+                _error = ex.Message;
+            }
         }
 
-        [Then("la cuenta deberia estar cancelada")]
-        public void EntoncesLaCuentaDeberiaEstarCancelada()
+        [Then("el saldo nuevo deberia ser (.*)")]
+        public void EntoncesElResultadoDeberiaSer(decimal resultado)
         {
-            Assert.IsFalse(_cuenta.Estado);
-        }
+            Assert.AreEqual(_cuenta.Saldo, resultado);
+        }        
 
         [Then("deberia ser error")]
         public void EntoncesDeberiaMostrarseError()
@@ -89,6 +97,12 @@ namespace Bank.Domain.Tests.Features
         public void EntoncesDeberiaMostrarseError(string error)
         {
             Assert.AreEqual(_error, error);
+        }
+        
+        [Then("la cuenta deberia estar cancelada")]
+        public void EntoncesLaCuentaDeberiaEstarCancelada()
+        {
+            Assert.IsFalse(_cuenta.Estado);
         }
     }
 }
