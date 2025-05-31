@@ -5,6 +5,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateSpecFlowTestExecutionJson>true</GenerateSpecFlowTestExecutionJson>
+    <PackageId>Bank.Domain_Lab09_Brunoenr02</PackageId>
+    <RepositoryUrl>https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-09-cs-Brunoenr02</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-09-cs-Brunoenr02</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
