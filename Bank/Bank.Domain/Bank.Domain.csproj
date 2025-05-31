@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateSpecFlowTestExecutionJson>true</GenerateSpecFlowTestExecutionJson>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.8" />
+  </ItemGroup>
+
+</Project>
