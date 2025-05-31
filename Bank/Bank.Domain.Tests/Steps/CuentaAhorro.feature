@@ -16,3 +16,14 @@ Scenario: Cliente retira en su cuenta un monto negativo y es incorrecto
     And con saldo 10
 	When retiro -10
 	Then deberia ser error
+
+Scenario: Cliente cancela su cuenta exitosamente
+	Given la nueva cuenta numero 12345
+	When cancelo la cuenta
+	Then la cuenta deberia estar cancelada
+
+Scenario: Cliente intenta cancelar una cuenta ya cancelada
+	Given la nueva cuenta numero 12345
+	When cancelo la cuenta
+	And cancelo la cuenta
+	Then la cuenta deberia estar cancelada

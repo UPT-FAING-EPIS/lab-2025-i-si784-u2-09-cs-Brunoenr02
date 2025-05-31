@@ -35,5 +35,9 @@ namespace Bank.Domain
                 throw new Exception (ERROR_MONTO_MENOR_IGUAL_A_CERO);
             Saldo -= monto;
         }
+        public void Cancelar()
+        {
+            Estado = false;
+        }
     }
 }

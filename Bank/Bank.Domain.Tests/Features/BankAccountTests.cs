@@ -67,11 +67,17 @@ namespace Bank.Domain.Tests.Features
             }
         }
 
-        [Then("el saldo nuevo deberia ser (.*)")]
-        public void EntoncesElResultadoDeberiaSer(decimal resultado)
+        [When("cancelo la cuenta")]
+        public void CuandoCanceloLaCuenta()
         {
-            Assert.AreEqual(_cuenta.Saldo, resultado);
-        }        
+            _cuenta.Cancelar();
+        }
+
+        [Then("la cuenta deberia estar cancelada")]
+        public void EntoncesLaCuentaDeberiaEstarCancelada()
+        {
+            Assert.IsFalse(_cuenta.Estado);
+        }
 
         [Then("deberia ser error")]
         public void EntoncesDeberiaMostrarseError()
